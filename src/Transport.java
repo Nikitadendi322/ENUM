@@ -2,10 +2,11 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String brand;
     private final String model;
     private double engineVolume;
+    private Driver driver;
 
-    private T driver;
 
-    public Transport(String brand, String model, double engineVolume,T driver) {
+
+    public Transport(String brand, String model, double engineVolume, T driver) {
         if (brand == null || brand.isEmpty()) {
             brand = "default";
         }
@@ -16,6 +17,22 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.model = model;
         setEngineVolume(engineVolume);
         setDriver(driver);
+    }
+
+    public String name() {
+        return getType().name();
+    }
+
+    public int ordinal() {
+        return getType().ordinal();
+    }
+
+    public int compareTo(Type o) {
+        return getType().compareTo(o);
+    }
+
+    public Class<Type> getDeclaringClass() {
+        return getType().getDeclaringClass();
     }
 
     public String getBrand() {
@@ -35,9 +52,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.engineVolume = engineVolume;
     }
 
-    public T getDriver() {
-        return driver;
-    }
+
 
     public void setDriver(T driver) {
         this.driver = driver;
@@ -49,6 +64,8 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract Type getType();
 
+    public abstract void printType();
+
 
     @Override
     public String toString() {
@@ -57,4 +74,22 @@ public abstract class Transport<T extends Driver> implements Competing {
                 "Объем двигателя: " + engineVolume;
     }
 
+    @Override
+    public void pitStop() {
+
+    }
+
+    @Override
+    public void circleTime() {
+
+    }
+
+    @Override
+    public void maxSpeed() {
+
+    }
+
+    public Driver getDriver() {
+        return null;
+    }
 }

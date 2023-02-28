@@ -1,15 +1,31 @@
 import java.util.List;
 
 public class Car extends Transport<DriverB> implements Competing {
+    public BodyType bodyType;
     public Car(String brand, String model, double engineVolume, DriverB driver) {
         super(brand, model, engineVolume, driver);
+        this.bodyType=getBodyType();
+        this.setBodyType(bodyType);
     }
+
+    public BodyType getBodyType(){return bodyType;}
 
     @Override
     public void startMove() {
         System.out.println("Автомобиль марки" + getBrand() + "начал движение");
 
     }
+
+
+    @Override
+    public int compareTo(Type o) {
+        return getType().compareTo(o);
+    }
+
+    public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
+        return Enum.valueOf(enumType, name);
+    }
+
     @Override
     public void finishMove() {
         System.out.println("Автомобиль марки" + getBrand() + "закончил движение");
@@ -22,12 +38,13 @@ public class Car extends Transport<DriverB> implements Competing {
 
     }
 
+
     @Override
     public void circleTime() {
         int minFound = 150;
         int maxFound = 230;
-        int theBestTimeInMins = (int) (minFound + (maxFound - minFound) * Math.random());
-        System.out.println("Лучшее время круга в минутах для автомобиля" + theBestTimeInMins);
+        int theBestTimeInMin = (int) (minFound + (maxFound - minFound) * Math.random());
+        System.out.println("Лучшее время круга в минутах для автомобиля" + theBestTimeInMin);
 
 
     }
@@ -46,4 +63,12 @@ public class Car extends Transport<DriverB> implements Competing {
         return Type.CAR;
     }
 
+    @Override
+    public void printType() {
+
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
 }

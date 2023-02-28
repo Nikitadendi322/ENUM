@@ -1,11 +1,24 @@
 public class Bus extends Transport<DriverD> {
 
+    private LoadCapacity loadCapacity;
 
 
     public Bus(String brand, String model, double engineVolume, DriverD driver) {
         super(brand, model, engineVolume, driver);
+        this.pitStop();
+        this.circleTime();
+        this.maxSpeed();
+        this.getType();
+        this.loadCapacity=loadCapacity;
+
 
     }
+
+    public Bus(String mercedes, String conecto, int engineVolume, int i, BodyType pickup) {
+        super(mercedes);
+    }
+
+
     @Override
     public void startMove() {
         System.out.println("Автобус марки" + getBrand() + "начал движение");
@@ -22,6 +35,23 @@ public class Bus extends Transport<DriverD> {
     @Override
     public Type getType() {
         return Type.BUS;
+    }
+
+    @Override
+    public void printType() {
+        if (getLoadCapacity()==null){
+            System.out.println("Не достаточно данных");
+            }else{
+            System.out.println(getLoadCapacity);
+            }
+        }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 
     @Override
@@ -49,4 +79,6 @@ public class Bus extends Transport<DriverD> {
         System.out.println("Максимальная скорость автобуса"+maxSpeed);
 
     }
+
+
 }

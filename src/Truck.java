@@ -1,6 +1,10 @@
 public class Truck extends Transport<DriverC> {
+
+    private LoadCapacity loadCapacity;
+
     public Truck(String brand, String model, double engineVolume, DriverC driver) {
         super(brand, model, engineVolume, driver);
+
     }
 
     @Override
@@ -23,6 +27,12 @@ public class Truck extends Transport<DriverC> {
     public Type getType(){
         return Type.TRUCK;
     }
+
+    @Override
+    public void printType() {
+
+    }
+
     public void printType(boolean getLoadCapacity, LoadCapacity loadCapacity){
         if (getLoadCapacity(loadCapacity)==null) {
             System.out.println("Не достаточно данных");

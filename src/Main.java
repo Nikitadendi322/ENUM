@@ -34,4 +34,11 @@ public class Main {
     private static void printInfo(Transport<?> transport){
         System.out.println("Водитель"+transport.getDriver().getName()+"управляет автомобилем"+transport.getBrand()+" и будет учавстовать в заездах");
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
+
+
 }
