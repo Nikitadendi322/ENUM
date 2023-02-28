@@ -1,5 +1,5 @@
 public enum Type {
     BUS,
     CAR,
-    TRUCK;
+    TRUCK
 }

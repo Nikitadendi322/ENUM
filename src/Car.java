@@ -1,4 +1,6 @@
-public class Car extends Transport<DriverB>implements Competing {
+import java.util.List;
+
+public class Car extends Transport<DriverB> implements Competing {
     public Car(String brand, String model, double engineVolume, DriverB driver) {
         super(brand, model, engineVolume, driver);
     }
@@ -8,7 +10,6 @@ public class Car extends Transport<DriverB>implements Competing {
         System.out.println("Автомобиль марки" + getBrand() + "начал движение");
 
     }
-
     @Override
     public void finishMove() {
         System.out.println("Автомобиль марки" + getBrand() + "закончил движение");
@@ -39,8 +40,9 @@ public class Car extends Transport<DriverB>implements Competing {
         int maxSpeed = (int) (minFound + (maxFound - minFound) * Math.random());
         System.out.println("Максимальная скорость автомобиля" + maxSpeed);
     }
+
     @Override
-    public Type getType(){
+    public Type getType() {
         return Type.CAR;
     }
 

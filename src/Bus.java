@@ -6,8 +6,6 @@ public class Bus extends Transport<DriverD> {
         super(brand, model, engineVolume, driver);
 
     }
-
-
     @Override
     public void startMove() {
         System.out.println("Автобус марки" + getBrand() + "начал движение");
