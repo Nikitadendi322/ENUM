@@ -1,8 +1,6 @@
-import java.util.List;
-
 public class Car extends Transport<DriverB> implements Competing {
-    public BodyType bodyType;
-    public Car(String brand, String model, double engineVolume, DriverB driver) {
+    private BodyType bodyType;
+    public Car(String brand, String model, double engineVolume, int driver, BodyType bodyType) {
         super(brand, model, engineVolume, driver);
         this.bodyType=getBodyType();
         this.setBodyType(bodyType);

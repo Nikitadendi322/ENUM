@@ -1,21 +1,24 @@
 public class Bus extends Transport<DriverD> {
 
     private LoadCapacity loadCapacity;
+    private BodyType bodyType;
 
 
-    public Bus(String brand, String model, double engineVolume, DriverD driver) {
+    public Bus(String brand, String model, double engineVolume, DriverD driver,BodyType bodyType) {
         super(brand, model, engineVolume, driver);
         this.pitStop();
         this.circleTime();
         this.maxSpeed();
         this.getType();
         this.loadCapacity=loadCapacity;
+        this.bodyType=getBodyType();
+        this.setBodyType(bodyType);
 
 
     }
 
     public Bus(String mercedes, String conecto, int engineVolume, int i, BodyType pickup) {
-        super(mercedes);
+        super("Mercedes","Conecto",123,1,);
     }
 
 
@@ -80,5 +83,11 @@ public class Bus extends Transport<DriverD> {
 
     }
 
+    public BodyType getBodyType() {
+        return bodyType;
+    }
 
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
 }

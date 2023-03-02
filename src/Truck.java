@@ -1,9 +1,14 @@
 public class Truck extends Transport<DriverC> {
 
     private LoadCapacity loadCapacity;
+    private BodyType bodyType;
 
-    public Truck(String brand, String model, double engineVolume, DriverC driver) {
+
+    public Truck(String brand, String model, double engineVolume, int driver, BodyType bodyType) {
         super(brand, model, engineVolume, driver);
+        this.loadCapacity=loadCapacity;
+        this.bodyType=getBodyType();
+        this.setBodyType(bodyType);
 
     }
 
@@ -63,5 +68,17 @@ public class Truck extends Transport<DriverC> {
     public LoadCapacity getLoadCapacity(LoadCapacity loadCapacity){return loadCapacity; }
 
 
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public BodyType getBodyType() {
+        return bodyType;
+    }
+
+    public void setBodyType(BodyType bodyType) {
+        this.bodyType = bodyType;
+    }
 }
 

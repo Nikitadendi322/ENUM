@@ -22,9 +22,9 @@ public class TestCar {
                 5
         );
 
-        Car car=new Car("Opel","Astra",12,123,BodyType.HATCHBACK,LoadCapacity.getValue());
+        Car car=new Car("Opel","Astra",12,123,BodyType.HATCHBACK);
         Bus bus=new Bus("Mercedes","Conecto",13,1,BodyType.PICKUP);
-        Truck truck=new Truck("Белаз","2344",2340,1,BodyType.CROSSOVER,);
+        Truck truck=new Truck("Белаз","2344",2340,1,BodyType.CROSSOVER);
 
         List<Transport> racer=new ArrayList<>();
 

@@ -6,7 +6,8 @@ public class Main {
                     "Car brand №" + i,
                     "Car model №" + i,
                     1.4,
-                    driverB
+                    driverB,
+                    BodyType.COUPE
             );
             DriverC driverC = new DriverC("Driver №" + i, true, 7 + i);
             Truck truck = new Truck(
@@ -20,7 +21,9 @@ public class Main {
                     "Bus brand №" + i,
                     "Bus model №" + i,
                     4.8,
-                    driverD
+                    driverD,
+                    BodyType.HATCHBACK
+
 
             );
             printInfo(car);
